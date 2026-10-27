@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+*.log
+position.json
+runtime.json
+.venv/
+graphify-out/
+dist/

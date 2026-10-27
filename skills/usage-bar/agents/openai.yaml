@@ -1,0 +1,4 @@
+interface:
+  display_name: "Usage Bar"
+  short_description: "Control the local Codex token and quota bar"
+  default_prompt: "Use $usage-bar to check the usage companion status."

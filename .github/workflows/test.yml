@@ -1,0 +1,28 @@
+name: Windows tests
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Python tests
+        run: python -m unittest discover -v
+      - name: PowerShell syntax
+        shell: pwsh
+        run: |
+          Get-ChildItem *.ps1 | ForEach-Object {
+            $errors = $null
+            [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$null, [ref]$errors) | Out-Null
+            if ($errors) { throw ($errors | Out-String) }
+          }
+      - name: Installer smoke test
+        shell: pwsh
+        run: ./test_install.ps1 -PythonExe (Get-Command python).Source
