@@ -26,3 +26,6 @@ jobs:
       - name: Installer smoke test
         shell: pwsh
         run: ./test_install.ps1 -PythonExe (Get-Command python).Source
+      - name: Windows PowerShell 5.1 installer smoke test
+        shell: powershell
+        run: ./test_install.ps1 -PythonExe (Get-Command python).Source

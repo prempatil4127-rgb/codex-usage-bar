@@ -5,7 +5,7 @@ if (!$PythonExe) {
     elseif (Get-Command python -ErrorAction SilentlyContinue) { $PythonExe = (& python -c 'import sys; print(sys.executable)') }
 }
 if (!$PythonExe -or !(Test-Path -LiteralPath $PythonExe)) { throw 'Install Python 3.10+ (64-bit, with Tcl/Tk), or pass -PythonExe C:\path\python.exe.' }
-& $PythonExe -c 'import sys, tkinter, struct; assert sys.version_info >= (3,10); assert struct.calcsize("P") == 8; assert sys.platform == "win32"'
+& $PythonExe -c "import sys, tkinter, struct; assert sys.version_info >= (3,10); assert struct.calcsize('P') == 8; assert sys.platform == 'win32'"
 if ($LASTEXITCODE -ne 0) { throw 'Python must be Windows 64-bit version 3.10+ with tkinter.' }
 $pythonw = Join-Path (Split-Path $PythonExe) 'pythonw.exe'
 if (!(Test-Path -LiteralPath $pythonw)) { throw 'pythonw.exe is missing from this Python installation.' }
