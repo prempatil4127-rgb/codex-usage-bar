@@ -1,0 +1,20 @@
+{
+  "name": "codex-usage-bar",
+  "version": "1.1.0",
+  "description": "Control a quiet Windows usage companion for Codex.",
+  "author": { "name": "prempatil4127-rgb" },
+  "repository": "https://github.com/prempatil4127-rgb/codex-usage-bar",
+  "license": "MIT",
+  "skills": "./skills/",
+  "requires_local_executor": true,
+  "interface": {
+    "displayName": "Usage Bar",
+    "shortDescription": "Token totals and quota bars for Codex on Windows",
+    "longDescription": "Enable, disable, or inspect the local usage companion. The small overlay follows Codex while it is active. Requires Windows and Python with Tk.",
+    "developerName": "prempatil4127-rgb",
+    "category": "Productivity",
+    "capabilities": ["Instructions"],
+    "defaultPrompt": ["Use Usage Bar to check the companion status."],
+    "brandColor": "#A9CDB6"
+  }
+}

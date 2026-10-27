@@ -1,0 +1,12 @@
+{
+  "name": "codex-usage-tools",
+  "interface": { "displayName": "Codex Usage Tools" },
+  "plugins": [
+    {
+      "name": "codex-usage-bar",
+      "source": { "source": "local", "path": "./" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
+      "category": "Productivity"
+    }
+  ]
+}

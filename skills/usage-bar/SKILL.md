@@ -19,4 +19,9 @@ This controls a companion overlay, not Codex's native Settings or prompt bar.
 It appears only while Codex is foregrounded. Tokens follow the latest active
 local session; quotas are recorded account-wide 5-hour and weekly usage.
 There is no daily percentage. If the script is missing, report that the
-companion needs installation; the skill alone does not install it.
+companion needs installation. If the user requested enabling or setting up
+the bar, resolve the plugin root from this SKILL.md (two directories above
+its containing directory) and run its `install.ps1`, then verify `status`.
+The installer requires Windows 64-bit Python 3.10+ with Tk; accept an explicit
+Python path if automatic detection fails. For a status-only request, report
+the missing installation without starting an install.

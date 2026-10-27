@@ -73,6 +73,28 @@ application files or session logs are modified.
 
 ## Controls
 
+### Install as a Codex plugin
+
+With a recent Codex CLI, run these commands from this downloaded/cloned folder:
+
+```powershell
+codex plugin marketplace add .
+codex plugin add codex-usage-bar@codex-usage-tools
+```
+
+Restart Codex or start a new chat to load the plugin's skill. The plugin appears
+as **Usage Bar** in **Codex Usage Tools**. Run `install.ps1` once to set up the
+companion, then ask the Usage Bar plugin to turn it on, off, or check status.
+The plugin controls the companion window; it does not change the native prompt
+bar. Disabling/removing the plugin does not stop an already running companion;
+turn the bar off before removing the plugin if you want both disabled.
+
+```powershell
+codex plugin remove codex-usage-bar@codex-usage-tools
+```
+
+### Use the companion
+
 In a Codex chat, invoke `$usage-bar on`, `$usage-bar off`, or `$usage-bar status`.
 If the skill does not appear immediately, start a new chat or restart Codex.
 The skill is optional for operation; these commands also work directly:
